@@ -1,0 +1,51 @@
+1#include <iostream>
+#include <locale>
+
+int main() {
+	setlocale(LC_ALL, "");
+	int size;
+	std::cout << "Введите размер доск: ";
+	std::cin >> size;
+
+	for (int i = 0; i < size; ++i) {
+		for (int j = 0; j < size; ++j) {
+
+			if ((i + j) % 2 == 0)
+				std::cout << "-";
+			else
+				std::cout << "+";
+		}
+		std::cout << std::endl;
+	}
+
+	return 0;
+}
+
+2#include <iostream>
+#include <locale>
+
+int main() {
+	setlocale(LC_ALL, "");
+	int n;
+	std::cout << "Введите размер доски: ";
+	std::cin >> n;
+
+	const int cell = 5; 
+
+	for (int row = 0; row < n; ++row) {
+
+		for (int subRow = 0; subRow < cell; ++subRow) {
+			for (int col = 0; col < n; ++col) {
+	
+				char ch = ((row + col) % 2 == 0) ? '-' : '+';
+
+				for (int subCol = 0; subCol < cell; ++subCol) {
+					std::cout << ch;
+				}
+			}
+			std::cout << "\n"; 
+		}
+	}
+
+	return 0;
+}

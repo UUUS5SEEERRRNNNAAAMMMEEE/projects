@@ -1,0 +1,60 @@
+#include <iostream>
+#include <locale>
+#include <conio.h>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "");
+	cout << "управление:\n";
+	cout << "w - вперед\n";
+	cout << "s - назад\n";
+	cout << "a - влево\n";
+	cout << "d - вправо\n";
+	cout << "space - прыжок\n";
+	cout << "enter - огонь\n";
+	cout << "escape - выход\n";
+
+	while (true) {
+		unsigned char c = _getch();
+		switch (c) {
+		case 'w':
+		case 'W':
+		case 'Ц':
+		case 'ц':
+			cout << "вперед\n";
+			break;
+		case 'a':
+		case 'A':
+		case 'Ф':
+		case 'ф':
+			cout << "влево\n";
+			break;
+		case 's':
+		case 'S':
+		case 'Ы':
+		case 'ы':
+			cout << "назад\n";
+			break;
+		case 'd':
+		case 'D':
+		case 'в':
+		case 'В':
+			cout << "вправо\n";
+			break;
+		case ' ':
+			cout << "прыжок\n";
+			break;
+		case 13:
+			cout << "огонь\n";
+			break;
+		case 27:
+			cout << "выход\n";
+			return 0;
+
+		default:
+			break;
+		}
+	}
+
+	return 0;
+}

@@ -1,0 +1,72 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+	int n; cout << "введите размер фигуры: ";
+	cin >> n;
+	if (n < 0) {
+		cout << "ошибка: размер должен быть неотрицательным" << endl;
+		return 1;
+	}
+	cout << endl;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) cout << '*';
+		cout << '\n';
+	}
+	cout << '\n';
+
+	for (int i = 1; i <= n; i++) {
+		for (int j = 0; j < i; j++) cout << '*';
+		cout << '\n';
+	}
+	cout << '\n';
+
+	for (int i = n; i > 0; i--) {
+		for (int j = 0; j < i; j++) cout << '*';
+		cout << '\n';
+	}
+	cout << '\n';
+
+	for (int i = 1; i <= n; i++) {
+		cout << string(n - i, ' ');
+		for (int j = 0; j < i; j++) cout << "*";
+		cout << "\n";
+	}
+	cout << '\n';
+	for (int i = n; i >= 1; i--) {
+		cout << string(n - i, ' ');
+		for (int j = 0; j < i; j++) cout << '*';
+		cout << '\n';
+	}
+	cout << '\n';
+
+	for (int i = 1; i <= n; i++) {
+		for (int s = 0; s < n - i; s++) cout << ' ';
+		cout << '/';
+		if (i > 1) {
+			for (int k = 0; k < 2 * i - 3; k++) cout << ' ';
+			cout << '\\';
+		}
+		else {
+			cout << "\\";
+		}
+		cout << '\n';
+	}
+	for (int i = n; i >= 1; i--) {
+		for (int s = 0; s < n - i; s++) cout << ' ';
+		cout << '\\';
+		if (i > 1) {
+			for (int k = 0; k < 2 * i - 3; k++) cout << ' ';
+			cout << '/';
+		}
+		else {
+			cout << '/';
+		}
+		cout << '\n';
+	}
+	return 0;
+}
