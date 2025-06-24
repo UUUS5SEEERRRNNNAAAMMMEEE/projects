@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+	unsigned int n;
+	cout << "введите число: ";
+	cin >> n;
+	string hexDigits = "0123456789ABCDEF";
+	string result = "";
+	while (n > 0) {
+		unsigned int rem = n % 16;
+		result = hexDigits[rem] + result;
+		n /= 16;
+	}
+	cout << "Шестнадцатеричное представление: " << result << endl;
+	return 0;
+}

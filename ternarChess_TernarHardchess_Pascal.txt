@@ -1,0 +1,65 @@
+1.
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+	int n;
+	cout << "введите размер доски: ";
+	cin >> n;
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n; ++j) {
+			cout << (((i + j) % 2 == 0) ? '+' : '-');
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
+2.
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+	int n;
+	const int cell = 5;
+	cout << "введите размер доски: ";
+	cin >> n;
+	for (int i = 0; i < n * cell; ++i) {
+		for (int j = 0; j < n * cell; ++j) {
+			int ci = i / cell;
+			int cj = j / cell;
+			cout << (((ci + cj) % 2 == 0) ? '+' : '-');
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
+3.
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+	int n;
+	cout << "введите глубину треугольника: ";
+	cin >> n;
+
+	for (int i = 0; i < n; ++i) {
+		cout << string((n - i - 1) * 2, ' ');
+
+		long long c = 1;
+		for (int j = 0; j <= i; ++j) {
+			cout << c << "   ";
+			c = c * (i - j) / (j + 1);
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
